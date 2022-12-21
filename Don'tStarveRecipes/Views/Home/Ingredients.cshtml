@@ -1,8 +1,4 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model IngredientsModel
 
 <h1>Ingredients</h1>
 
@@ -17,16 +13,54 @@
 <div class="tab-content" id="nav-tabContent">
   <div class="tab-pane fade show active" id="nav-meats" role="tabpanel" aria-labelledby="nav-meats-tab">
       <h3>Meats</h3>
+      <div class="row">
+            @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Meats)))
+            {
+                var imagePath = "~/images/Meats/" + (ingredient + ".png");
+                <div class="col-auto mb-5">
+                    <img src=@imagePath class="w-100" asp-append-version="true" />
+                    <br/>
+                </div>
+            }
+      </div>
   </div>
   <div class="tab-pane fade" id="nav-vegetables" role="tabpanel" aria-labelledby="nav-vegetables-tab">
       <h3>Vegetables</h3>
+       <div class="row">
+            @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Vegetables)))
+            {
+                var imagePath = "~/images/Vegetables/" + (ingredient + ".png");
+                <div class="col-auto mb-5">
+                    <img src=@imagePath class="w-100" asp-append-version="true" />
+                    <br/>
+                </div>
+            }
+      </div>
   </div>
   <div class="tab-pane fade" id="nav-fruits" role="tabpanel" aria-labelledby="nav-fruits-tab">
       <h3>Fruits</h3>
+       <div class="row">
+            @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Fruits)))
+            {
+                var imagePath = "~/images/Fruits/" + (ingredient + ".png");
+                <div class="col-auto mb-5">
+                    <img src=@imagePath class="w-100" asp-append-version="true" />
+                    <br/>
+                </div>
+            }
+      </div>
   </div>
   <div class="tab-pane fade" id="nav-eggs" role="tabpanel" aria-labelledby="nav-eggs-tab">
-      <h3>Eggs</h3>
+      <h3>Other</h3>
+       <div class="row">
+            @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Other)))
+            {
+                var imagePath = "~/images/Other/" + (ingredient + ".png");
+                <div class="col-auto mb-5">
+                    <img src=@imagePath class="w-100" asp-append-version="true" />
+                    <br/>
+                </div>
+            }
+      </div>
   </div>
 </div>
-
-
