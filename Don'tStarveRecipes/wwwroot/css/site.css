@@ -24,3 +24,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
 }
+
+.mx-230 {
+    margin-left: 230px;
+    margin-right: 230px;
+}
