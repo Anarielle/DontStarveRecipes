@@ -3,7 +3,6 @@
     public class DishModel
     {
         public string DishName { get; set; }
-        public string ImagePath { get; set; }
         public bool Drumstick { get; set; }
         public bool Meat { get; set; }
         public bool Morsel { get; set; }

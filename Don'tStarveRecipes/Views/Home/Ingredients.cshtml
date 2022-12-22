@@ -1,66 +1,155 @@
 ﻿@model IngredientsModel
 
-<h1>Ingredients</h1>
+<div class="text-center">
+    <h1>Ingredients</h1>
 
-<nav>
-  <div class="nav nav-tabs" id="nav-tab" role="tablist">
-    <a class="nav-item nav-link active" id="nav-meats-tab" data-toggle="tab" href="#nav-meats" role="tab" aria-controls="nav-meats" aria-selected="false">Meats</a>
-    <a class="nav-item nav-link" id="nav-vegetables-tab" data-toggle="tab" href="#nav-vegetables" role="tab" aria-controls="nav-vegetables" aria-selected="false">Vegetables</a>
-    <a class="nav-item nav-link" id="nav-fruits-tab" data-toggle="tab" href="#nav-fruits" role="tab" aria-controls="nav-fruits" aria-selected="false">Fruits</a>
-    <a class="nav-item nav-link" id="nav-eggs-tab" data-toggle="tab" href="#nav-eggs" role="tab" aria-controls="nav-eggs" aria-selected="false">Eggs</a>
-  </div>
-</nav>
-<div class="tab-content" id="nav-tabContent">
-  <div class="tab-pane fade show active" id="nav-meats" role="tabpanel" aria-labelledby="nav-meats-tab">
-      <h3>Meats</h3>
-      <div class="row">
-            @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Meats)))
-            {
-                var imagePath = "~/images/Meats/" + (ingredient + ".png");
-                <div class="col-auto mb-5">
-                    <img src=@imagePath class="w-100" asp-append-version="true" />
-                    <br/>
-                </div>
-            }
-      </div>
-  </div>
-  <div class="tab-pane fade" id="nav-vegetables" role="tabpanel" aria-labelledby="nav-vegetables-tab">
-      <h3>Vegetables</h3>
-       <div class="row">
-            @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Vegetables)))
-            {
-                var imagePath = "~/images/Vegetables/" + (ingredient + ".png");
-                <div class="col-auto mb-5">
-                    <img src=@imagePath class="w-100" asp-append-version="true" />
-                    <br/>
-                </div>
-            }
-      </div>
-  </div>
-  <div class="tab-pane fade" id="nav-fruits" role="tabpanel" aria-labelledby="nav-fruits-tab">
-      <h3>Fruits</h3>
-       <div class="row">
-            @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Fruits)))
-            {
-                var imagePath = "~/images/Fruits/" + (ingredient + ".png");
-                <div class="col-auto mb-5">
-                    <img src=@imagePath class="w-100" asp-append-version="true" />
-                    <br/>
-                </div>
-            }
-      </div>
-  </div>
-  <div class="tab-pane fade" id="nav-eggs" role="tabpanel" aria-labelledby="nav-eggs-tab">
-      <h3>Other</h3>
-       <div class="row">
-            @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Other)))
-            {
-                var imagePath = "~/images/Other/" + (ingredient + ".png");
-                <div class="col-auto mb-5">
-                    <img src=@imagePath class="w-100" asp-append-version="true" />
-                    <br/>
-                </div>
-            }
-      </div>
-  </div>
+    <nav class="nav justify-content-center">
+        <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-item nav-link active" id="nav-meats-tab" data-toggle="tab" href="#nav-meats" role="tab" aria-controls="nav-meats" aria-selected="false">Meats</a>
+            <a class="nav-item nav-link" id="nav-vegetables-tab" data-toggle="tab" href="#nav-vegetables" role="tab" aria-controls="nav-vegetables" aria-selected="false">Vegetables</a>
+            <a class="nav-item nav-link" id="nav-fruits-tab" data-toggle="tab" href="#nav-fruits" role="tab" aria-controls="nav-fruits" aria-selected="false">Fruits</a>
+            <a class="nav-item nav-link" id="nav-eggs-tab" data-toggle="tab" href="#nav-eggs" role="tab" aria-controls="nav-eggs" aria-selected="false">Eggs</a>
+        </div>
+    </nav>
+    <div class="tab-content " id="nav-tabContent">
+        <div class="tab-pane fade show active" id="nav-meats" role="tabpanel" aria-labelledby="nav-meats-tab">
+            <div class="row">
+                @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Meats)))
+                {
+                    var imagePath = "~/images/Meats/" + (ingredient + ".png");
+                    <div class="col-auto mb-5">
+                        <img src=@imagePath class="w-100" asp-append-version="true" />
+                        <br/>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-vegetables" role="tabpanel" aria-labelledby="nav-vegetables-tab">
+            <div class="row">
+                @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Vegetables)))
+                {
+                    var imagePath = "~/images/Vegetables/" + (ingredient + ".png");
+                    <div class="col-auto mb-5">
+                        <img src=@imagePath class="w-100" asp-append-version="true" />
+                        <br/>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-fruits" role="tabpanel" aria-labelledby="nav-fruits-tab">
+            <div class="row">
+                @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Fruits)))
+                {
+                    var imagePath = "~/images/Fruits/" + (ingredient + ".png");
+                    <div class="col-auto mb-5">
+                        <img src=@imagePath class="w-100" asp-append-version="true" />
+                        <br/>
+                    </div>
+                }
+            </div>
+        </div>
+        <div class="tab-pane fade" id="nav-eggs" role="tabpanel" aria-labelledby="nav-eggs-tab">
+            <div class="row">
+                @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Other)))
+                {
+                    var imagePath = "~/images/Other/" + (ingredient + ".png");
+                    <div class="col-auto mb-5">
+                        <img src=@imagePath class="w-100" asp-append-version="true" />
+                        <br/>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
+    </br>
 </div>
