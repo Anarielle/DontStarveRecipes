@@ -59,6 +59,6 @@ body {
 }
 
 .bg-custom {
-    --bs-bg-opacity: 1;
-    background-color: #644920;
+    background: rgb(198,149,77);
+    background: linear-gradient(0deg, rgba(198,149,77,1) 0%, rgba(59,46,22,1) 96%, rgba(59,46,22,1) 100%);
 }

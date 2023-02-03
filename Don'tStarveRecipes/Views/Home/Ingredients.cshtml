@@ -18,7 +18,10 @@
                 {
                     var imagePath = "~/images/Meats/" + (ingredient + ".png");
                     <div class="col-auto mb-5">
-                        <img src=@imagePath class="w-100" asp-append-version="true" />
+                        <input type="checkbox" class="btn-check" name="options-outlined" id="@ingredient" autocomplete="off" checked>
+                        <label class="btn btn-outline-success" for="@ingredient">
+                            <img src=@imagePath class="w-100" asp-append-version="true" />
+                        </label>
                         <br/>
                     </div>
                 }
