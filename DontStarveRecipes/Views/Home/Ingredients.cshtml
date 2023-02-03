@@ -3,7 +3,7 @@
 <div class="text-center">
     <h1>Ingredients</h1>
 
-    <nav class="nav justify-content-center nav nav-custom">
+    <nav class="nav justify-content-center nav nav-custom mb-4">
         <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a class="nav-item nav-link active" id="nav-meats-tab" data-toggle="tab" href="#nav-meats" role="tab" aria-controls="nav-meats" aria-selected="false">Meats</a>
             <a class="nav-item nav-link" id="nav-vegetables-tab" data-toggle="tab" href="#nav-vegetables" role="tab" aria-controls="nav-vegetables" aria-selected="false">Vegetables</a>
@@ -13,13 +13,13 @@
     </nav>
     <div class="tab-content " id="nav-tabContent">         
         <div class="tab-pane fade show active" id="nav-meats" role="tabpanel" aria-labelledby="nav-meats-tab">
-            <div class="row mx-230 mt-4">
+            <div class="row mx-260">
                 @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Meats)))
                 {
                     var imagePath = "~/images/Meats/" + (ingredient + ".png");
-                    <div class="col-auto mb-5">
+                    <div class="col-auto mb-4">
                         <input type="checkbox" class="btn-check" name="options-outlined" id="@ingredient" autocomplete="off" checked>
-                        <label class="btn btn-outline-success" for="@ingredient">
+                        <label class="btn btn-outline-success px-0 py-0" for="@ingredient">
                             <img src=@imagePath class="w-100" asp-append-version="true" />
                         </label>
                         <br/>
@@ -28,23 +28,26 @@
             </div>
         </div>
         <div class="tab-pane fade" id="nav-vegetables" role="tabpanel" aria-labelledby="nav-vegetables-tab">
-            <div class="row mx-230 mt-4">
+            <div class="row mx-260">
                 @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Vegetables)))
                 {
                     var imagePath = "~/images/Vegetables/" + (ingredient + ".png");
-                    <div class="col-auto mb-5">
-                        <img src=@imagePath class="w-100" asp-append-version="true" />
+                    <div class="col-auto mb-4">
+                        <input type="checkbox" class="btn-check" name="options-outlined" id="@ingredient" autocomplete="off" checked>
+                        <label class="btn btn-outline-success px-0 py-0" for="@ingredient">
+                            <img src=@imagePath class="w-100" asp-append-version="true" />
                         <br/>
+                        </label>
                     </div>
                 }
             </div>
         </div>
         <div class="tab-pane fade" id="nav-fruits" role="tabpanel" aria-labelledby="nav-fruits-tab">
-            <div class="row mx-230 mt-4">
+            <div class="row mx-260">
                 @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Fruits)))
                 {
                     var imagePath = "~/images/Fruits/" + (ingredient + ".png");
-                    <div class="col-auto mb-5">
+                    <div class="col-auto mb-4">
                         <img src=@imagePath class="w-100" asp-append-version="true" />
                         <br/>
                     </div>
@@ -52,11 +55,11 @@
             </div>
         </div>
         <div class="tab-pane fade" id="nav-eggs" role="tabpanel" aria-labelledby="nav-eggs-tab">
-            <div class="row mx-230 mt-4">
+            <div class="row mx-260">
                 @foreach (var ingredient in Enum.GetValues(typeof(IngredientsModel.Other)))
                 {
                     var imagePath = "~/images/Other/" + (ingredient + ".png");
-                    <div class="col-auto mb-5">
+                    <div class="col-auto mb-4">
                         <img src=@imagePath class="w-100" asp-append-version="true" />
                         <br/>
                     </div>
